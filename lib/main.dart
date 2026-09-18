@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: StringConst.appTitle,
       theme: ThemeData(
         brightness: .light,
+        fontFamily: StringConst.appFontFamily
       ),
       routerConfig: router,
       builder: (ctx, child)=> child!,
