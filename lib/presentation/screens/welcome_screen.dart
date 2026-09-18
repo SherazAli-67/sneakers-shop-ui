@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sneakers_shop_ui/constants/string_const.dart';
 import 'package:sneakers_shop_ui/core/app_colors.dart';
-import 'package:sneakers_shop_ui/core/app_data.dart';
 import 'package:sneakers_shop_ui/core/app_icons.dart';
 import 'package:sneakers_shop_ui/core/app_textstyles.dart';
 import 'package:sneakers_shop_ui/router/router.dart';
@@ -83,7 +82,7 @@ class WelcomeScreen extends StatelessWidget {
       child: Transform.rotate(
         angle: 0.15,
         child: Image.asset(
-          AppData.welcomeSneakerImage,
+          AppIcons.welcomePageSneaker,
           width: size.width * 0.9,
           fit: .contain,
         ),

@@ -23,6 +23,8 @@ class Product {
   final String deliveryInfo;
   final List<ProductColorOption> colors;
   final List<int> sizes;
+  final Color? bgColor;
+  final String brandLogoImg;
 
   const Product({
     required this.id,
@@ -37,5 +39,7 @@ class Product {
     required this.deliveryInfo,
     required this.colors,
     required this.sizes,
+    this.bgColor,
+    required this.brandLogoImg
   });
 }

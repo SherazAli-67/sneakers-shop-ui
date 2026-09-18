@@ -1,4 +1,5 @@
 import 'package:sneakers_shop_ui/core/app_colors.dart';
+import 'package:sneakers_shop_ui/core/app_icons.dart';
 import 'package:sneakers_shop_ui/core/models/brand.dart';
 import 'package:sneakers_shop_ui/core/models/product.dart';
 
@@ -7,25 +8,25 @@ class AppData {
     Brand(
       id: 'adidas',
       name: 'Adidas',
-      logoAsset: 'assets/images/adidas_logo.png',
+      logoAsset: AppIcons.adidasLogo,
       accentColor: AppColors.brandAdidas,
     ),
     Brand(
       id: 'nike',
       name: 'Nike',
-      logoAsset: 'assets/images/nike_logo.png',
+      logoAsset: AppIcons.nikeLogo,
       accentColor: AppColors.brandNike,
     ),
     Brand(
       id: 'reebok',
       name: 'Reebok',
-      logoAsset: 'assets/images/reebok_logo.png',
+      logoAsset: AppIcons.reebokLogo,
       accentColor: AppColors.brandReebok,
     ),
     Brand(
       id: 'puma',
       name: 'Puma',
-      logoAsset: 'assets/images/puma_logo.png',
+      logoAsset: AppIcons.pumaLogo,
       accentColor: AppColors.brandPuma,
     ),
   ];
@@ -46,7 +47,7 @@ class AppData {
     id: 'qc-lifestyle',
     name: 'QC Lifestyle Sneaker',
     brandTag: 'QC',
-    imageAsset: 'assets/images/promo_banner_shoe.png',
+    imageAsset: AppIcons.promoBannerShoe,
     rating: 4.8,
     price: 120.50,
     subtitle: 'Lightweight Power shoe for men',
@@ -55,17 +56,19 @@ class AppData {
     deliveryInfo: _defaultDeliveryInfo,
     colors: _defaultColors,
     sizes: _defaultSizes,
+    brandLogoImg: AppIcons.nikeLogo
+
   );
 
   static const promoDescription =
-      'Get 360 degrees of comfort & style combined in QC Lifestyle.';
+      'Get 360 degrees of comfort & style combined in QC Lifestyle. Engineered with a breathable \nupper and cushioned sole for all-day wear on and off the court.';
 
   static const newArrivals = <Product>[
     Product(
       id: 'adidas-run-falcon',
       name: 'Adidas Run Falcon 2.0',
       brandTag: 'JXV',
-      imageAsset: 'assets/images/addidas_shoes.png',
+      imageAsset: AppIcons.adidasShoes,
       rating: 4.5,
       price: 60.80,
       oldPrice: 80.00,
@@ -75,12 +78,14 @@ class AppData {
       deliveryInfo: _defaultDeliveryInfo,
       colors: _defaultColors,
       sizes: _defaultSizes,
+      bgColor: AppColors.lightOrange,
+      brandLogoImg: AppIcons.adidasLogo
     ),
     Product(
       id: 'nike-air-force',
       name: 'Nike Air Force 1',
       brandTag: 'NK',
-      imageAsset: 'assets/images/nike_air_force_shoes.png',
+      imageAsset: AppIcons.nikeAirForceShoes,
       rating: 4.7,
       price: 95.00,
       oldPrice: 110.00,
@@ -90,12 +95,14 @@ class AppData {
       deliveryInfo: _defaultDeliveryInfo,
       colors: _defaultColors,
       sizes: _defaultSizes,
+      bgColor: AppColors.shoesBgColorGrey,
+      brandLogoImg: AppIcons.nikeLogo
     ),
     Product(
       id: 'trail-cruiser',
       name: 'Trail Cruiser Sneaker',
       brandTag: 'TC',
-      imageAsset: 'assets/images/trail_cruiser_shoes.png',
+      imageAsset: AppIcons.trailCruiserShoes,
       rating: 4.3,
       price: 72.40,
       oldPrice: 89.00,
@@ -105,12 +112,14 @@ class AppData {
       deliveryInfo: _defaultDeliveryInfo,
       colors: _defaultColors,
       sizes: _defaultSizes,
+      bgColor: AppColors.lightPinkColor,
+      brandLogoImg: AppIcons.pumaLogo
     ),
     Product(
       id: 'puma-runner',
       name: 'Puma Soft Ride',
       brandTag: 'PM',
-      imageAsset: 'assets/images/puma_shoes.png',
+      imageAsset: AppIcons.pumaShoes,
       rating: 4.4,
       price: 68.90,
       oldPrice: 85.00,
@@ -120,12 +129,14 @@ class AppData {
       deliveryInfo: _defaultDeliveryInfo,
       colors: _defaultColors,
       sizes: _defaultSizes,
+      bgColor: AppColors.lightOrange,
+      brandLogoImg: AppIcons.reebokLogo
     ),
     Product(
       id: 'red-sprint',
       name: 'Sprint Red Edition',
       brandTag: 'SR',
-      imageAsset: 'assets/images/red_shoes.png',
+      imageAsset: AppIcons.redShoes,
       rating: 4.6,
       price: 78.50,
       oldPrice: 99.00,
@@ -135,12 +146,14 @@ class AppData {
       deliveryInfo: _defaultDeliveryInfo,
       colors: _defaultColors,
       sizes: _defaultSizes,
+      bgColor: AppColors.shoesBgColorGrey,
+      brandLogoImg: AppIcons.nikeLogo
     ),
     Product(
       id: 'black-urban',
       name: 'Urban Black Low',
       brandTag: 'UB',
-      imageAsset: 'assets/images/black_shoes.png',
+      imageAsset: AppIcons.blackShoes,
       rating: 4.5,
       price: 70.00,
       oldPrice: 88.00,
@@ -150,10 +163,10 @@ class AppData {
       deliveryInfo: _defaultDeliveryInfo,
       colors: _defaultColors,
       sizes: _defaultSizes,
+      bgColor: AppColors.lightPinkColor,
+      brandLogoImg: AppIcons.pumaLogo
     ),
   ];
-
-  static const welcomeSneakerImage = 'assets/images/welcome_page_sneaker.png';
 
   static Product? productById(String id) {
     if (featuredProduct.id == id) return featuredProduct;
