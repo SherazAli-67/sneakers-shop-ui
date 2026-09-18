@@ -5,8 +5,8 @@ import 'package:sneakers_shop_ui/core/app_colors.dart';
 class AppTextStyles {
   static const welcomeHeadline = TextStyle(
     fontFamily: StringConst.appFontFamily,
-    fontWeight: .w700,
-    fontSize: 28,
+    fontWeight: .w400,
+    fontSize: 26,
     height: 1.2,
     color: AppColors.white,
   );
@@ -14,15 +14,15 @@ class AppTextStyles {
   static const welcomeSneakers = TextStyle(
     fontFamily: StringConst.sneakersTextFontFamily,
     fontWeight: .w700,
-    fontSize: 22,
-    color: AppColors.textPrimary,
+    fontSize: 34,
+    color: AppColors.white,
   );
 
   static const welcomeWatermark = TextStyle(
-    fontFamily: StringConst.appFontFamily,
+    fontFamily: StringConst.sneakersTextFontFamily,
     fontWeight: .w700,
-    fontSize: 72,
-    color: AppColors.watermark,
+    fontSize: 96,
+    color: AppColors.primary,
   );
 
   static const sectionTitle = TextStyle(

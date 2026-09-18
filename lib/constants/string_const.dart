@@ -6,7 +6,7 @@ class StringConst {
   static const welcomeComfortable = 'COMFORTABLE';
   static const welcomeFashionable = 'FASHIONABLE';
   static const welcomeSneakers = 'SNEAKERS';
-  static const welcomeWatermark = 'ADIDAS';
+  static const welcomeWatermark = 'ADIDADA';
 
   static const topBrands = 'Top Brands';
   static const newArrivals = 'New Arrivals';
