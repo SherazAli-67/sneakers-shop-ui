@@ -15,6 +15,8 @@ class StringConst {
   static const descriptions = 'DESCRIPTIONS';
   static const deliveryAndFreeReturns = 'DELIVERY & FREE RETURNS';
   static const seeMore = 'See more';
+  static const seeLess = 'See less';
+  static const productNotFound = 'Product not found';
   static const search = 'Search';
   static const favorites = 'Favorites';
   static const profile = 'Profile';
