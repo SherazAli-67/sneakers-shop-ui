@@ -20,34 +20,31 @@ class AppHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: .symmetric(horizontal: 20, vertical: 8),
-      child: Row(
-        children: [
-          SizedBox(width: 40, height: 40, child: Align(alignment: .centerLeft, child: _buildLeading())),
-          Expanded(
-            child: title == null
-                ? const SizedBox.shrink()
-                : Text(title!, style: AppTextStyles.screenTitle, textAlign: .center),
-          ),
-          SizedBox(
-            width: 40,
-            height: 40,
-            child: Align(
-              alignment: .centerRight,
-              child: GestureDetector(
-                onTap: onCartTap,
-                child: SvgPicture.asset(
-                  AppIcons.cart,
-                  width: 24,
-                  height: 24,
-                  colorFilter: .mode(AppColors.textPrimary, .srcIn),
-                ),
+    return Row(
+      children: [
+        SizedBox(width: 40, height: 40, child: Align(alignment: .centerLeft, child: _buildLeading())),
+        Expanded(
+          child: title == null
+              ? const SizedBox.shrink()
+              : Text(title!, style: AppTextStyles.screenTitle, textAlign: .center),
+        ),
+        SizedBox(
+          width: 40,
+          height: 40,
+          child: Align(
+            alignment: .centerRight,
+            child: GestureDetector(
+              onTap: onCartTap,
+              child: SvgPicture.asset(
+                AppIcons.cart,
+                width: 24,
+                height: 24,
+                colorFilter: .mode(AppColors.textPrimary, .srcIn),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
