@@ -21,8 +21,10 @@ class HomeScreen extends StatelessWidget {
         child: Padding(
           padding: const .symmetric(horizontal: 20.0, vertical: 8),
           child: Column(
+            spacing: 20,
             children: [
               //appHeader
+              AppHeader(),
               Expanded(
                 child: ListView(
                   padding: .only(bottom: FloatingBottomNav.height + 32),
@@ -48,6 +50,7 @@ class HomeScreen extends StatelessWidget {
       spacing: 18,
       children: [
         //topBrands, screenTitle
+        Text(StringConst.topBrands, style: AppTextStyles.screenTitle,),
         SizedBox(
           height: 72,
           child: ListView.separated(
@@ -55,7 +58,7 @@ class HomeScreen extends StatelessWidget {
             itemCount: AppData.brands.length,
             separatorBuilder: (_, _) => const SizedBox(width: 17),
             //logoAsset, fit: contain
-            itemBuilder: (_, index)=> const SizedBox()
+            itemBuilder: (_, index)=> Image.asset(AppData.brands[index].logoAsset, fit: .contain,)
           ),
         ),
       ],
@@ -67,10 +70,10 @@ class HomeScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () => context.push('${NamedRoutes.product.routeName}/${product.id}'),
       child: Container(
-        // height: 200,
+        height: 200,
         decoration: BoxDecoration(
-          // color: AppColors.primary,
-          // borderRadius: .circular(24),
+          color: AppColors.primary,
+          borderRadius: .circular(24),
         ),
         child: Stack(
           clipBehavior: .none,
@@ -84,14 +87,15 @@ class HomeScreen extends StatelessWidget {
                 spacing: 8,
                 children: [
                   //product.name, promoTitle
+                  Text(product.name, style: AppTextStyles.promoTitle,),
                   //promoDescription, promoBody, 2Lines,
-
+                  Text(AppData.promoDescription, style: AppTextStyles.promoBody, maxLines: 2,),
                   Container(
                     width: 36,
                     height: 36,
                     margin: .only(top: 16),
-                    // decoration: const BoxDecoration(color: AppColors.white, shape: .circle),
-                    // child: const Icon(Icons.arrow_forward_rounded, size: 18, color: AppColors.primary),
+                    decoration: const BoxDecoration(color: AppColors.white, shape: .circle),
+                    child: const Icon(Icons.arrow_forward_rounded, size: 18, color: AppColors.primary),
                   ),
                 ],
               ),
@@ -100,13 +104,13 @@ class HomeScreen extends StatelessWidget {
               right: 0,
               bottom: 0,
               //product.imageAsset, width: 275,
-              child: const SizedBox()
+              child: Image.asset(product.imageAsset, width: 275,)
             ),
             Positioned(
               left: -60,
               bottom: -80,
               //AppIcons.ripplePromoBannerImg
-              child: const SizedBox()
+              child: Image.asset(AppIcons.ripplePromoBannerImg)
             ),
           ],
         ),
@@ -120,6 +124,7 @@ class HomeScreen extends StatelessWidget {
       spacing: 16,
       children: [
         //newArrivals, screenTitle
+        Text(StringConst.newArrivals, style: AppTextStyles.screenTitle,),
         ...AppData.newArrivals.map((product) => _buildProductListItem(context, product)),
       ],
     );
@@ -130,9 +135,9 @@ class HomeScreen extends StatelessWidget {
       onTap: () => context.push('${NamedRoutes.product.routeName}/${product.id}'),
       child: Container(
         decoration: BoxDecoration(
-          // color: AppColors.white,
-          // borderRadius: .circular(6),
-          /*boxShadow:  [
+          color: AppColors.white,
+          borderRadius: .circular(6),
+          boxShadow:  [
             BoxShadow(
               color: AppColors.black.withValues(alpha: 0.016),
               blurRadius: 135,
@@ -151,7 +156,7 @@ class HomeScreen extends StatelessWidget {
               spreadRadius: 0,
               offset: Offset(0, 8.24),
             ),
-          ],*/
+          ],
         ),
         child: Row(
           spacing: 14,
@@ -166,10 +171,11 @@ class HomeScreen extends StatelessWidget {
                     width: 70,
                     decoration: BoxDecoration(
                       // color: product.bgColor,
+                      color: product.bgColor,
                       borderRadius: .only(topLeft: .circular(6), bottomLeft: .circular(6)),
                     ),
                     //product.imageAsset, fit: contain
-                    child: const SizedBox()
+                    child: Image.asset(product.imageAsset, fit: .contain,)
                   ),
                   Positioned(
                       right: 0,
@@ -177,7 +183,7 @@ class HomeScreen extends StatelessWidget {
                       bottom: 0,
                       child: Align(
                           alignment: .center,
-                          // child: Image.asset(product.brandLogoImg, height: 17, width: 17, fit: .cover,),
+                          child: Image.asset(product.brandLogoImg, height: 17, width: 17, fit: .cover,),
                       ))
                 ],
               ),
@@ -188,6 +194,7 @@ class HomeScreen extends StatelessWidget {
                 spacing: 6,
                 children: [
                   //product.name, sizeLabel, weight: 500
+                  Text(product.name, style: AppTextStyles.sizeLabel.copyWith(fontWeight: .w500),),
                   Row(
                     children: [
                       Expanded(child: Column(
@@ -197,11 +204,11 @@ class HomeScreen extends StatelessWidget {
                             spacing: 8,
                             crossAxisAlignment: .center,
                             children: [
-                              // Row(children: List.generate(5, (index)=> Icon(Icons.star_rate_rounded, size: 9,)),),
-                              // Text("5.0", style: AppTextStyles.promoBody.copyWith(color: AppColors.black),)
+                              Row(children: List.generate(5, (index)=> Icon(Icons.star_rate_rounded, size: 9,)),),
+                              Text("5.0", style: AppTextStyles.promoBody.copyWith(color: AppColors.black),)
                             ],
                           ),
-                          // Text(product.brandTag, style: AppTextStyles.body,)
+                          Text(product.brandTag, style: AppTextStyles.body,)
                         ],
                       )),
                       Padding(
@@ -209,9 +216,10 @@ class HomeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: .end,
                           children: [
-                            //\$${product.oldPrice}, body.lineThrough
-
+                            //, body.lineThrough
+                            Text('\$${product.oldPrice}', style: AppTextStyles.body.copyWith(decoration: .lineThrough),),
                             //\$${product.price}, productPrice
+                            Text('\$${product.price}', style: AppTextStyles.productPrice,)
                           ],
                         ),
                       )
